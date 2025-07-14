@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "required": ["nom", "reference", "prix", "categorie", "tags", "commentaires"],
+    "properties": {
+        "nom" : { "type": "string", "minLength":3, "maxLength": 100 },
+        "prix": { "bsonType": "int", "exclusiveMinimum": 0, "maximum": 9999, "multipleOf": 0.01 },
+        "reference" : { "type": "string", "pattern": "^\\d{10}$" },
+        "categorie" : { "enum": ["Boisson", "Viande", "Legumes"] },
+        "tags" : { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "maxItems": 10 },
+        "commentaires": { "type": "array", "items": { 
+            "type": "object",
+            "required": ["auteur", "date", "message"],
+            "properties": {
+                "auteur": { "type": "string" },
+                "message": { "type": "string" },
+                "date": { "bsonType": "date" }
+            } 
+        } }
+    }
+}

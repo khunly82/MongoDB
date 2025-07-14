@@ -1,0 +1,15 @@
+{
+    "$schema": "./person.schema.json",
+    "nom" : "Ly",
+    "prenom": "Khun",
+    "email": "lykhun@gmail.com",
+    "dateNaissance": "1982-05-06",
+    "ssn": "82.05.06-203.16",
+    "titre": "Mr",
+    "adresse": {
+        "rue": "Rue de coquelicots",
+        "numero": 42,
+        "codePostal": "5000",
+        "ville": "Namur"
+    }
+}

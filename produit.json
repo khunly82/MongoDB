@@ -1,0 +1,11 @@
+{
+    "nom": "Coca",
+    "prix": 1.20,
+    "reference": "1234567891",
+    "categorie": "Boisson",
+    "tags": ["Soda", "Sucre", "Caféine"],
+    "commentaires": [
+        { "auteur": "Khun LY", "date": "1982-01-01", "message": "TROP de sucre" },
+        { "auteur": "M Jordan", "date": "1982-01-02", "message": "Le coca c'est la vie" }
+    ]
+}
