@@ -32,3 +32,32 @@ db.movies.aggregate([
         } }
     } }
 ])
+
+db.movies.aggregate([
+    { $group: {
+        _id: ['$year','$rating'],
+        films: { 
+            $firstN: { 
+                input: '$title', 
+                n: 25 
+            } 
+        }
+    } },
+    { $sort: { _id: 1 } }
+])
+
+
+db.movies.aggregate([
+    { $setWindowFields: {
+      partitionBy: '$year',
+      output: {
+        moyenne: { $avg: '$score' },
+        max: { $max: '$score' }
+      }
+    } },
+    { $match: {
+        $expr: { 
+            $lt: ['$score', '$moyenne'] 
+        }
+    } }
+])
